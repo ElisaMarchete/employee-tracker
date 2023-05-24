@@ -1,19 +1,28 @@
 // loading modules
 const inquirer = require("inquirer");
-const express = require("express");
-const mysql = require("mysql2");
+const queries = require("./lib/queries");
 
-const PORT = 3001;
-const app = express();
+// Function to display the table
+function displayTable(answer) {
+  if (answer.options === "Quit") {
+    console.log("Exiting the program...");
+    process.exit(0); // 0 indicates a successful exit
+  }
 
-// Function to ask user questions
-function getInput() {
+  queries.viewTables(answer);
+
+  // After displaying the table, ask the user for the next action
+  allDepartmentInput();
+}
+
+// Function to ask user questions and display table
+function allDepartmentInput() {
   inquirer
     .prompt([
       {
         type: "list",
         name: "options",
-        message: "'What would you like to do?",
+        message: "What would you like to do?",
         choices: [
           "View All Employees",
           "Add Employee",
@@ -26,32 +35,10 @@ function getInput() {
         ],
       },
     ])
-    .then((answers) => {
-      // create the connection to database
-      const connection = mysql.createConnection(
-        {
-          host: "localhost",
-          user: "root",
-          password: "5748962",
-          database: "business_db",
-        },
-        console.log(`Connected to the business_db database.`)
-      );
-
-      // Query database
-      connection.query("SELECT * FROM department", function (err, results) {
-        if (err) {
-          console.log("failed to run query");
-          return;
-        } else console.log(results);
-
-        app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-      });
-
-      // console.log(answers);
-      //   generateFile(answers);
+    .then((answer) => {
+      displayTable(answer);
     });
 }
 
 // Function call to initialize app
-getInput();
+allDepartmentInput();
