@@ -3,20 +3,22 @@ const inquirer = require("inquirer");
 const queries = require("./lib/queries");
 
 // Function to display the table
-function displayTable(answer) {
+function processAnswer(answer) {
   if (answer.options === "Quit") {
     console.log("Exiting the program...");
     process.exit(0); // 0 indicates a successful exit
   }
 
   queries.viewTables(answer);
+  queries.addDataTables(answer);
 
-  // After displaying the table, ask the user for the next action
-  allDepartmentInput();
+  if (answer.options !== "Add Department") {
+    userInput();
+  }
 }
 
 // Function to ask user questions and display table
-function allDepartmentInput() {
+function userInput() {
   inquirer
     .prompt([
       {
@@ -36,9 +38,9 @@ function allDepartmentInput() {
       },
     ])
     .then((answer) => {
-      displayTable(answer);
+      processAnswer(answer);
     });
 }
 
 // Function call to initialize app
-allDepartmentInput();
+userInput();
