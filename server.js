@@ -11,8 +11,9 @@ function processAnswer(answer) {
 
   queries.viewTables(answer);
   queries.addDataTables(answer);
+  queries.addRoleTables(answer);
 
-  if (answer.options !== "Add Department") {
+  if (answer.options !== "Add Department" && answer.options !== "Add Role") {
     userInput();
   }
 }
