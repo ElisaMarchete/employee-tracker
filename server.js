@@ -40,8 +40,13 @@ function processAnswer(answer) {
   queries.viewTables(answer);
   queries.addDepartment(answer);
   queries.addRole(answer);
+  queries.addEmployee(answer);
 
-  if (answer.options !== "Add Department" && answer.options !== "Add Role") {
+  if (
+    answer.options !== "Add Department" &&
+    answer.options !== "Add Role" &&
+    answer.options !== "Add Employee"
+  ) {
     userInput();
   }
 }
