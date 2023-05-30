@@ -41,11 +41,13 @@ function processAnswer(answer) {
   queries.addDepartment(answer);
   queries.addRole(answer);
   queries.addEmployee(answer);
+  queries.updateEmployee(answer);
 
   if (
     answer.options !== "Add Department" &&
     answer.options !== "Add Role" &&
-    answer.options !== "Add Employee"
+    answer.options !== "Add Employee" &&
+    answer.options !== "Update Employee Role"
   ) {
     userInput();
   }
