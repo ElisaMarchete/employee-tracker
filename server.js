@@ -19,6 +19,10 @@ function userInput() {
           "Add Role",
           "Add Employee",
           "Update Employee Role",
+          "View Total Utilized Budget",
+          "Delete Department",
+          "Delete Role",
+          "Delete Employee",
           "Quit",
         ],
       },
@@ -42,6 +46,8 @@ function processAnswer(answer) {
   queries.addRole(answer);
   queries.addEmployee(answer);
   queries.updateEmployee(answer);
+  queries.viewBudget(answer);
+  queries.deleteInfo(answer);
 
   if (
     answer.options !== "Add Department" &&
