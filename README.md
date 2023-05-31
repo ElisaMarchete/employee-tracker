@@ -4,13 +4,6 @@
 
 This is a command-line app for managing company departments, roles, and employees. It lets you add, view, update, and delete departments, roles, and employees. It's built with Node.js, Inquirer, and MySQL.
 
-## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [Tecnologies](#tecnologies)
-* [License](#license)
-* [Link to walkthrough video ](#walkthrough)
-
 ## Installation
 1. Clone the repository to your local machine.
 2. Make sure you have Node.js installed.
@@ -28,7 +21,7 @@ To start the application, run node server.js in the terminal. You will be presen
 This project is licensed under the MIT license.
 
 ## Link to walkthrough video 
-[Link walkthrough video](https://)  
+[Link walkthrough video](https://watch.screencastify.com/v/6DF0lZ0sXTIWEzKIhTgf)  
 
 
 
