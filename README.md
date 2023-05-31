@@ -9,7 +9,7 @@ This is a command-line app for managing company departments, roles, and employee
 * [Usage](#usage)
 * [Tecnologies](#tecnologies)
 * [License](#license)
-* [Walkthrough Video](#walkthrough)
+* [Link to walkthrough video ](#walkthrough)
 
 ## Installation
 1. Clone the repository to your local machine.
@@ -27,7 +27,8 @@ To start the application, run node server.js in the terminal. You will be presen
 ## License
 This project is licensed under the MIT license.
 
-## Walkthrough
+## Link to walkthrough video 
+[Link walkthrough video](https://)  
 
 
 
